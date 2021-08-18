@@ -74,6 +74,9 @@ let g:airline_powerline_fonts = 1
 " Default <tab> US keymap conflicts with YCM
 let g:UltiSnipsExpandTrigger="<c-e>"
 
+" Remove preview window from YCM
+set completeopt-=preview
+
 " General config
 syntax on
 set background=dark
