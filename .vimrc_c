@@ -8,3 +8,6 @@ augroup project
 augroup END
 
 let &path.="src/include,"
+
+set makeprg=make\ -C\ ../build\ -j8
+nnoremap <F5> :!../build/compiled_bin
