@@ -1,4 +1,6 @@
 call plug#begin()
+" Autocompletion
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --all' }
 " Custom colorscheme
 Plug 'morhetz/gruvbox'
 " Integrated file tree viewer
@@ -69,6 +71,9 @@ let g:gitgutter_sign_modified_removed = '-'
 " Use airline's powerline font
 let g:airline_powerline_fonts = 1
 
+" Default <tab> US keymap conflicts with YCM
+let g:UltiSnipsExpandTrigger="<c-e>"
+
 " General config
 syntax on
 set background=dark
@@ -79,12 +84,21 @@ set ruler
 set title
 set expandtab
 
+" Allow loading local .vimrc files for project-specific settings
+set exrc
+set secure
+
+" Set a warning boundary at 100 characters
+set colorcolumn=100
+highlight ColorColumn ctermbg=darkgray
+
 " Set default tab lengths
 set tabstop=8 softtabstop=8 shiftwidth=8
 set textwidth=79
 
 " Adjust preferred tab lengths and expansion
 autocmd BufEnter *.c    set noexpandtab
+autocmd BufEnter *.cpp  set noexpandtab
 autocmd BufEnter *.h    set noexpandtab
 autocmd BufEnter *.html set noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
 autocmd BufEnter *.py   set tabstop=4 softtabstop=4 shiftwidth=4
