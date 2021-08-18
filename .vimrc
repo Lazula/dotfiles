@@ -87,6 +87,9 @@ set ruler
 set title
 set expandtab
 
+" Set make shortcut
+nnoremap <F4> :make!<cr>
+
 " Allow loading local .vimrc files for project-specific settings
 set exrc
 set secure
