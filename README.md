@@ -9,4 +9,11 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
+For YouCompleteMe, install the following packages:
+
+```
+sudo apt install build-essential cmake vim-nox python3-dev mono-complete \
+    golang nodejs default-jdk npm
+```
+
 Then, open `vim` and run `:PlugInstall` to download the plugins. No further action must be taken.
