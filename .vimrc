@@ -3,8 +3,8 @@ call plug#begin()
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --all' }
 " Custom colorscheme
 Plug 'morhetz/gruvbox'
-" Integrated file tree viewer
-Plug 'preservim/nerdtree'
+" Integrated file tree viewer, load on first toggle
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 " Add git awareness to NerdTree
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " Show git differences while editing
@@ -20,6 +20,8 @@ Plug 'epilande/vim-react-snippets'
 Plug 'SirVer/ultisnips'
 " Comment and uncomment lines
 Plug 'tpope/vim-commentary'
+" Markdown viewer
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
 call plug#end()
 
 " Reminder:
@@ -76,6 +78,12 @@ let g:UltiSnipsExpandTrigger="<c-e>"
 
 " Remove preview window from YCM
 set completeopt-=preview
+
+" Markdown viewer options
+let g:instant_markdown_autostart = 0
+let g:instant_markdown_port = 4000
+nnoremap <leader>p :InstantMarkdownPreview<CR>
+
 
 " General config
 syntax on
