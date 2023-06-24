@@ -28,6 +28,9 @@ call plug#end()
 " Use :PlugInstall to install plugins
 " Use :PlugUpdate to update plugins
 
+" Allow .ycm_extra_conf.py in ~/dev and ~/radare2, disallow anything else in ~
+let g:ycm_extra_conf_globlist = [ "~/dev/*", "~/radare2/*", "!~/*" ]
+
 " Open NerdTree whenever vim is opened
 autocmd VimEnter * NERDTree
 " ... but don't focus it.
@@ -114,8 +117,9 @@ set textwidth=79
 autocmd BufEnter *.c    set noexpandtab
 autocmd BufEnter *.cpp  set noexpandtab
 autocmd BufEnter *.h    set noexpandtab
+autocmd BufEnter *.inc  set noexpandtab
 autocmd BufEnter *.html set noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
-autocmd BufEnter *.py   set tabstop=4 softtabstop=4 shiftwidth=4
+autocmd BufEnter *.py   set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=0
 autocmd BufEnter *.lua  set tabstop=4 softtabstop=4 shiftwidth=4
 autocmd BufEnter *.js   set tabstop=2 softtabstop=2 shiftwidth=2
 autocmd BufEnter *.rb   set tabstop=2 softtabstop=2 shiftwidth=2
